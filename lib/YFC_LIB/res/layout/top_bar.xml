@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/top_bar_root_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/top_bar_root_rl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFFFFF" >
+
+        <RelativeLayout
+            android:id="@+id/top_bar_left_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp" >
+
+            <TextView
+                android:id="@+id/top_bar_left_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:singleLine="true"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/top_bar_left_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:contentDescription="@null"
+                android:scaleType="center"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/top_bar_center_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" >
+
+            <TextView
+                android:id="@+id/top_bar_center_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:singleLine="true"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/top_bar_center_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:contentDescription="@null"
+                android:scaleType="center"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/top_bar_right_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp" >
+
+            <TextView
+                android:id="@+id/top_bar_right_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:singleLine="true"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/top_bar_right_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:contentDescription="@null"
+                android:scaleType="center"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/top_bar_near_right_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/top_bar_right_rl" >
+
+            <TextView
+                android:id="@+id/top_bar_near_right_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:singleLine="true"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/top_bar_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/line_gary_top"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/top_bar_off_line_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF3BB"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/top_bar_off_line_iv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:contentDescription="@null"
+            android:src="@drawable/off_line_warning" />
+
+        <TextView
+            android:id="@+id/top_bar_off_line_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/top_bar_off_line_iv1"
+            android:gravity="center"
+            android:text="当前网络不可用,请检查网络设置."
+            android:textColor="#d0d0d0" />
+
+        <ImageView
+            android:id="@+id/top_bar_off_line_iv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:contentDescription="@null"
+            android:src="@drawable/off_line_arrow_right" />
+    </RelativeLayout>
+
+</LinearLayout>

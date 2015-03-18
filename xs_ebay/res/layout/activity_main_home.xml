@@ -10,8 +10,8 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="30dp"
-        android:layout_margin="10dp"
-        android:background="@color/white"
+        android:layout_margin="5dp"
+        android:background="@drawable/bg_rectangle_white_allradius_xml"
         android:orientation="horizontal" >
 
         <com.yfc_lib.widget.CleanableEditText
@@ -32,12 +32,15 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="3dp"
-            android:background="@color/bg_gary_light"
             android:layout_weight="1"
+            android:background="@color/bg_gary_light"
             android:onClick="clickFirst"
             android:src="@drawable/rate" />
     </LinearLayout>
-
+	<com.handmark.pulltorefresh.library.PullToRefreshScrollView 
+	    android:scrollbars="none"
+	    android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
@@ -69,20 +72,17 @@
                     android:padding="20dip" />
             </FrameLayout>
 
-            <FrameLayout
+            <com.xiao.oia.view.MyGridView
+                android:id="@+id/goods_display_gv"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:padding="10dp" >
-
-                <GridView
-                    android:id="@+id/goods_display_gv"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:gravity="center"
-                    android:numColumns="2" >
-                </GridView>
-            </FrameLayout>
+                android:layout_margin="5dp"
+                android:background="@color/bg_white"
+                android:gravity="center"
+                android:listSelector="@drawable/base_defulat_gray_trans_selector"
+                android:numColumns="2" >
+            </com.xiao.oia.view.MyGridView>
         </LinearLayout>
     </RelativeLayout>
-
+</com.handmark.pulltorefresh.library.PullToRefreshScrollView>
 </LinearLayout>

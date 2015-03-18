@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
@@ -44,6 +45,16 @@ public class MainActivity extends BaseTopActivity {
 		super.init();
 		initTopVp();
 		leftTv.setText("main");
+		rightRl.setVisibility(View.VISIBLE);
+		rightTv.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.lib_menu_gray_small, 0);
+		rightTv.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				gotoList(arg0);
+
+			}
+		});
 		gvContent = new GridViewContent<String>();
 		gvContent.setView(this, gv);
 		gvContent.setItemIdAndBaseAdapter(R.layout.gv_item_iv_base,
@@ -64,7 +75,7 @@ public class MainActivity extends BaseTopActivity {
 					@Override
 					public void inflateAfter(View view, BSBaseViewHolder holder) {
 						holder.img1 = (ImageView) view
-								.findViewById(R.id.iv_pic);
+								.findViewById(R.id.gv_item_iv1);
 					}
 				});
 		List<String> lists = new ArrayList<String>();
@@ -87,10 +98,16 @@ public class MainActivity extends BaseTopActivity {
 		});
 	}
 
-	protected void gotoDetail(String t) {
-		Intent intent =new Intent(context,GoodsDetailActivity.class);
+	protected void gotoList(View arg0) {
+		Intent intent = new Intent(context, GoodsGvlistActivity.class);
 		startActivity(intent);
-		
+
+	}
+
+	protected void gotoDetail(String t) {
+		Intent intent = new Intent(context, GoodsDetailActivity.class);
+		startActivity(intent);
+
 	}
 
 	private void initTopVp() {

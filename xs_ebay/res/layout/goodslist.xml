@@ -8,20 +8,27 @@
     <include layout="@layout/top_bar" />
 
     <TextView
+        android:id="@+id/goods_list_top_categray"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@color/bg_gary"
+        android:onClick="gotoTopClick"
         android:padding="5dp"
         android:text="@string/test1"
         android:textSize="16sp"
         android:textStyle="bold" />
 
-    <FrameLayout
+    <include layout="@layout/base_list" />
+
+    <GridView
+        android:id="@+id/goods_list_gv"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:padding="10dp" >
-
-        <include layout="@layout/base_list" />
-    </FrameLayout>
+        android:layout_margin="5dp"
+        android:background="@color/bg_white"
+        android:gravity="center"
+        android:listSelector="@drawable/base_defulat_gray_trans_selector"
+        android:numColumns="2"
+        android:visibility="gone" />
 
 </LinearLayout>
