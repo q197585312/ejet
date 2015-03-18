@@ -19,7 +19,7 @@ import com.yfc_lib.volley.toolbox.ImageLoader;
 import com.yfc_lib.volley.toolbox.ImageLoader.ImageListener;
 
 public class GoodsGvlistActivity extends BaseTopActivity {
-	GridViewContent gv;
+	GridViewContent<String> gv;
 	@ViewInject(R.id.goods_list_gv)
 	GridView list;
 
@@ -70,7 +70,7 @@ public class GoodsGvlistActivity extends BaseTopActivity {
 
 					}
 				});
-		List<String> ls = new ArrayList<>();
+		List<String> ls = new ArrayList<String>();
 		ls.add("");
 		ls.add("");
 		ls.add("");

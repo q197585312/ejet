@@ -46,7 +46,8 @@ public class MainActivity extends BaseTopActivity {
 		initTopVp();
 		leftTv.setText("main");
 		rightRl.setVisibility(View.VISIBLE);
-		rightTv.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.lib_menu_gray_small, 0);
+		rightTv.setCompoundDrawablesWithIntrinsicBounds(0, 0,
+				R.drawable.lib_menu_gray_small, 0);
 		rightTv.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -112,7 +113,7 @@ public class MainActivity extends BaseTopActivity {
 
 	private void initTopVp() {
 
-		ArrayList<String> imageList = new ArrayList<>();
+		ArrayList<String> imageList = new ArrayList<String>();
 		imageList
 				.add("http://g.hiphotos.baidu.com/image/w%3D310/sign=0fc8355357fbb2fb342b5e137f4a2043/3b87e950352ac65c461e5b7df9f2b21193138aa0.jpg");
 		imageList
