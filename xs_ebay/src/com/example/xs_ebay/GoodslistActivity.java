@@ -3,6 +3,7 @@ package com.example.xs_ebay;
 import java.util.HashMap;
 import java.util.Map;
 
+import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.GridView;
@@ -22,6 +23,7 @@ import com.xs_lib.imp.ItemCLickImp;
 import com.xs_lib.imp.ListViewContent;
 import com.yfc_lib.bean.BaseResponse;
 import com.yfc_lib.bean.RequestBean;
+import com.yfc_lib.util.Constants.KEY;
 import com.yfc_lib.util.HttpAnalyze;
 import com.yfc_lib.util.Logger;
 import com.yfc_lib.util.StringTool;
@@ -32,7 +34,7 @@ import com.yfc_lib.volley.toolbox.ImageLoader.ImageListener;
 public class GoodslistActivity extends BaseTopActivity {
 	CategoryBean topBean;
 	Map<String, CategoryBean> topHistory = new HashMap<String, CategoryBean>();
-	ListViewContent listString;
+	ListViewContent<CategoryBean> listString;
 	GridViewContent<CategoryBean> gvContent;
 
 	@ViewInject(R.id.my_list_content)
@@ -61,7 +63,7 @@ public class GoodslistActivity extends BaseTopActivity {
 		leftTv.setText("first");
 		gvContent = new GridViewContent<CategoryBean>();
 		gvContent.setView(this, gv);
-		listString = new ListViewContent<String>();
+		listString = new ListViewContent<CategoryBean>();
 		listString.setView(this, list);
 		listString.setItemIdAndBaseAdapter(android.R.layout.simple_list_item_1,
 				new BaseAdapterImp<CategoryBean>() {
@@ -87,6 +89,14 @@ public class GoodslistActivity extends BaseTopActivity {
 				topHistory.put(t.getCategoryID(), topBean);
 				topBean = t;
 				getCategryList(t);
+			}
+		});
+		gvContent.setItemClick(new ItemCLickImp<CategoryBean>() {
+			@Override
+			public void itemCLick(CategoryBean t, int position) {
+				Intent intent = new Intent(context, GoodsDetailActivity.class);
+				intent.putExtra(KEY.INTENT_DATA_KEY, t);
+				startActivity(intent);
 			}
 		});
 	}
